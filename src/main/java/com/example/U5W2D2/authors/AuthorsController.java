@@ -28,4 +28,14 @@ public class AuthorsController {
         return authorsService.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public Author getByIdAndUpdate(@PathVariable int id, @RequestBody Author body) {
+        return authorsService.findByIdAndUpdate(id,body);
+    }
+
+    @DeleteMapping("/{id}")
+    public void getByIdAndDelete(@PathVariable int id) {
+        authorsService.findByIdAndDelete(id);
+    }
+
 }

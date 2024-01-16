@@ -38,4 +38,23 @@ public class AuthorsService {
         return found;
     }
 
+    public Author findByIdAndUpdate(int id, Author body) {
+        Author found = this.findById(id);
+        found.setName(body.getName());
+        found.setSurname(body.getSurname());
+        found.setEmail(body.getEmail());
+        found.setBirthday(body.getBirthday());
+        found.setAvatarUrl(body.getAvatarUrl());
+        return found;
+    }
+
+    public void findByIdAndDelete(int id) {
+        Author found = this.findById(id);
+        for (int i = 0; i < authors.size(); i++) {
+            if(authors.get(i).getId() == found.getId()) {
+                authors.remove(found);
+            }
+        }
+    }
+
 }
