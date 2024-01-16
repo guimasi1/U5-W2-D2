@@ -50,7 +50,7 @@ public class BlogsService {
     public void findByIdAndDelete(int id) {
         Blog found = this.findById(id);
         for (int i = 0; i < blogs.size(); i++) {
-            if(blogs.get(i).equals(found)) {
+            if(blogs.get(i).getId() == found.getId()) {
                     blogs.remove(found);
             }
         }
