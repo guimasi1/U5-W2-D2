@@ -33,10 +33,10 @@ public class BlogsController {
         return blogsService.findByIdAndUpdate(id,body);
     }
 
-    /*@PutMapping("/{id}")
-    public Blog updateById(int id) {
-
-    }*/
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable int id) {
+        blogsService.findByIdAndDelete(id);
+    }
 
 
 }
